@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <script type="text/javascript" src="dist/bundle.js">
+
+    </script>
+   
+</head>
+
+<body style="margin: auto;
+text-align: center;
+font-family: arial;
+    font-size: 10pt;
+    line-height: 150%;
+    color: #003BBE;
+    font-weight: bold;
+    direction: ltr;
+    width: 50%;
+padding: 10px;">
+    <table cellpadding="0" cellspacing="0" border="0"  style="width: 100%;font-family:arial;border:none;"
+       >
+        <tbody>
+            <tr>
+                <td colspan="4" style="text-align:center;">Zmanim for Tarzana</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align:center;border-bottom: 3px solid #C0C0C0;">
+                    <span dir="ltr" id ="LeftDate"></span> </td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Dawn</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id = "Dawn"></td>
+            </tr>
+            <tr style="Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Earliest
+                    talis</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="talis"></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Sunrise
+                </td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;"id="Sunrise"></td>
+            </tr>
+            <tr style="Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Latest
+                    shema</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="latestShema"></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Latest
+                    shacharis </td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="latestShachrit"></td>
+            </tr>
+            <tr style="Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Midday
+                </td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="Midday"></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Earliest
+                    mincha</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="EarliestMincha"></td>
+            </tr>
+            <tr style="Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Plag
+                    hamincha</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="PlagHamincha"></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Sunset
+                </td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="Sunset"></td>
+            </tr>
+            <tr style="Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Nightfall
+                </td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="Nightfall"></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;72
+                    minutes</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="seventwomin"></td>
+            </tr>
+            <tr>
+                <td colspan="4"
+                    style="font-size:7pt;font-weight:normal;text-align:center;line-height:10pt;border-top: 1px solid #C0C0C0;">
+                    ( Click for more )</td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align:center;border-bottom: 3px solid #C0C0C0;padding-top:10px;"><span
+                        style="font-size:larger;"> שבת <span id="HebrewParsha"></span> <br></span><span dir="ltr" id="EnglishMonthDay"></span>   <span id="ShabbatMonthDate">-</span></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Candle
+                    lighting</td>
+                <td style="border-right:solid #C0C0C0 1px;"> <p> </p></td>
+                <td style="Text-Align:center;white-space:nowrap;" id="CandleLighting"></td>
+            </tr>
+            <tr style="Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;Shabbat
+                    ends</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="ShabbatEnds"></td>
+            </tr>
+            <tr style="Background-Color:#EBF1FF;Text-Align:left;">
+                <td style="padding-top:2px;padding-bottom:2px;Text-Align:left;white-space:nowrap;">&nbsp;&nbsp;72
+                    minutes</td>
+                <td style="border-right:solid #C0C0C0 1px;">&nbsp;&nbsp;</td>
+                <td style="Text-Align:center;white-space:nowrap;" id="seventwominshabbat"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="font-size:1pt;line-height:1pt;border-top: 1px solid #C0C0C0;">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
