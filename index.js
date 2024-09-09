@@ -10,7 +10,7 @@ function Test(){
     // set the date to show in PST timezone
 	let date = new Date();
 	let timezoneOffset = date.getTimezoneOffset();
-	console.log(timezoneOffset)
+
 	let pstOffset = -420; // this is the offset for the Pacific Standard Time timezone
 	let adjustedTime = new Date(date.getTime() + (pstOffset + timezoneOffset) * 60 * 1000);
 	
@@ -26,16 +26,13 @@ function Test(){
 	 
 	};
 	let pstDateTime = date.toLocaleString('en-US', options22);
-	console.log(pstDateTime); // Output: 2/16/2022, 11:01:20 AM
-	console.log('343')
-	 
+
+	
 	var today = date
 	const today3 = date
 	
-	console.log(today); // Output: 2/16/2022, 11:01:20 AM
 	var endofweek = 7 - today.getDay()  -1
 	
-	console.log(endofweek)
 	var time = "";
 	const nextThreeDays = new Date(today.setDate(today.getDate() + endofweek))
 	today = date
@@ -58,19 +55,19 @@ zmanim.setUseElevation(true)
 			candlelighting: true,
 			location: Location.lookup('Los Angeles'),
 			sedrot: true,
-			omer: true,
+			omer: false,
 			start: sunday,
 			end: nextThreeDays,
-			locale:"he"
+			locale:"he",
+			addHebrewDates:true
 		  };
 		  const events = HebrewCalendar.calendar(options);
 	console.log(events)
 		  var count = 0;
 		  for (const ev of events) {
-			console.log(ev)
+			
 			const hd = ev.getDate();
 			const date = hd.greg();
-			console.log(date.toLocaleDateString(), ev.render('en'), hd.toString());
 	
 			if(ev.render('en').includes('Parashat'))
 			{
@@ -90,18 +87,27 @@ zmanim.setUseElevation(true)
 				//document.getElementById("RightDate").innerText = time + " | " + ev.render('en')
 	
 				document.getElementById("ShabbatEnds").innerText = ev.render('en').split(': ')[1]
-				console.log('1/1/2024 '+ev.render('en').split(': ')[1])
-				var time72 = addMinutes(new Date(ev.render('en').split(': ')[1]),72)
-				console.log('ds' + time72)
+				var time72 = ev.render('en').split(': ')[1]
+				
+				var time73 = time72.split(':')
+				var min = time73[1].toUpperCase().replace('AM','').replace('PM','')	
+				var hours =  time73[0]
+				var dd = new Date( 2024, 1, 1 ,hours, min, 0)
+				var ds = new Date( 2024, 1, 1 ,hours, min, 0)
+
+				dd = new Date(dd.setMinutes(dd.getMinutes() +30))
+				ds = new Date(ds.setMinutes(ds.getMinutes() +72))
 
 				
-				document.getElementById("seventwominshabbat").innerText = time72
+				document.getElementById("seventwominshabbat").innerText = ds.toLocaleTimeString([], {timeStyle: 'short'});
 
+				
+				document.getElementById("thirtyminshabbat").innerText = dd.toLocaleTimeString([], {timeStyle: 'short'});
 
+				
 			}
 
 
-			document.getElementById("LeftDate").innerText =new Date().toDateString() + " | " + hd.toString()
 			
 			var dusk = new Date(zmanim.dusk().setHours(zmanim.dusk().getHours()-3))
 
@@ -161,9 +167,32 @@ zmanim.setUseElevation(true)
 			count ++;
 		  }
 
-		  function addMinutes(date, minutes) {
-			return new Date(date.getTime() + minutes*60000);
-		}
+		  const options24 = {
+			
+			isHebrewYear: false,
+			candlelighting: true,
+			location: Location.lookup('Los Angeles'),
+			sedrot: true,
+			omer: false,
+			start: new Date(),
+			end: new Date(),
+			locale:"he",
+			addHebrewDates:true
+		  };
+		  const events24 = HebrewCalendar.calendar(options24);
+	      console.log(events24)
+
+		  for (const ev of events24)
+		  {
+			console.log(ev)
+			if(ev.desc !=null)
+			{
+				document.getElementById("LeftDate").innerText =new Date().toDateString() + " | " +  ev.getDate();
+
+			}
+		  }
+		 
+		  
 	
 	
 			

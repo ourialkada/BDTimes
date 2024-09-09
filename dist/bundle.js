@@ -17,7 +17,7 @@ function Test() {
 	// set the date to show in PST timezone
 	var date = new Date();
 	var timezoneOffset = date.getTimezoneOffset();
-	console.log(timezoneOffset);
+
 	var pstOffset = -420; // this is the offset for the Pacific Standard Time timezone
 	var adjustedTime = new Date(date.getTime() + (pstOffset + timezoneOffset) * 60 * 1000);
 
@@ -33,16 +33,12 @@ function Test() {
 
 	};
 	var pstDateTime = date.toLocaleString('en-US', options22);
-	console.log(pstDateTime); // Output: 2/16/2022, 11:01:20 AM
-	console.log('343');
 
 	var today = date;
 	var today3 = date;
 
-	console.log(today); // Output: 2/16/2022, 11:01:20 AM
 	var endofweek = 7 - today.getDay() - 1;
 
-	console.log(endofweek);
 	var time = "";
 	var nextThreeDays = new Date(today.setDate(today.getDate() + endofweek));
 	today = date;
@@ -67,10 +63,11 @@ function Test() {
 		candlelighting: true,
 		location: _core.Location.lookup('Los Angeles'),
 		sedrot: true,
-		omer: true,
+		omer: false,
 		start: sunday,
 		end: nextThreeDays,
-		locale: "he"
+		locale: "he",
+		addHebrewDates: true
 	};
 	var events = _core.HebrewCalendar.calendar(options);
 	console.log(events);
@@ -83,10 +80,9 @@ function Test() {
 		for (var _iterator = events[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 			var ev = _step.value;
 
-			console.log(ev);
+
 			var hd = ev.getDate();
 			var _date = hd.greg();
-			console.log(_date.toLocaleDateString(), ev.render('en'), hd.toString());
 
 			if (ev.render('en').includes('Parashat')) {}
 			if (ev.render('en').includes('Candle')) {
@@ -98,14 +94,21 @@ function Test() {
 				//document.getElementById("RightDate").innerText = time + " | " + ev.render('en')
 
 				document.getElementById("ShabbatEnds").innerText = ev.render('en').split(': ')[1];
-				console.log('1/1/2024 ' + ev.render('en').split(': ')[1]);
-				var time72 = addMinutes(new Date(ev.render('en').split(': ')[1]), 72);
-				console.log('ds' + time72);
+				var time72 = ev.render('en').split(': ')[1];
 
-				document.getElementById("seventwominshabbat").innerText = time72;
+				var time73 = time72.split(':');
+				var min = time73[1].toUpperCase().replace('AM', '').replace('PM', '');
+				var hours = time73[0];
+				var dd = new Date(2024, 1, 1, hours, min, 0);
+				var ds = new Date(2024, 1, 1, hours, min, 0);
+
+				dd = new Date(dd.setMinutes(dd.getMinutes() + 30));
+				ds = new Date(ds.setMinutes(ds.getMinutes() + 72));
+
+				document.getElementById("seventwominshabbat").innerText = ds.toLocaleTimeString([], { timeStyle: 'short' });
+
+				document.getElementById("thirtyminshabbat").innerText = dd.toLocaleTimeString([], { timeStyle: 'short' });
 			}
-
-			document.getElementById("LeftDate").innerText = new Date().toDateString() + " | " + hd.toString();
 
 			var dusk = new Date(zmanim.dusk().setHours(zmanim.dusk().getHours() - 3));
 
@@ -168,8 +171,47 @@ function Test() {
 		}
 	}
 
-	function addMinutes(date, minutes) {
-		return new Date(date.getTime() + minutes * 60000);
+	var options24 = {
+
+		isHebrewYear: false,
+		candlelighting: true,
+		location: _core.Location.lookup('Los Angeles'),
+		sedrot: true,
+		omer: false,
+		start: new Date(),
+		end: new Date(),
+		locale: "he",
+		addHebrewDates: true
+	};
+	var events24 = _core.HebrewCalendar.calendar(options24);
+	console.log(events24);
+
+	var _iteratorNormalCompletion2 = true;
+	var _didIteratorError2 = false;
+	var _iteratorError2 = undefined;
+
+	try {
+		for (var _iterator2 = events24[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+			var _ev = _step2.value;
+
+			console.log(_ev);
+			if (_ev.desc != null) {
+				document.getElementById("LeftDate").innerText = new Date().toDateString() + " | " + _ev.getDate();
+			}
+		}
+	} catch (err) {
+		_didIteratorError2 = true;
+		_iteratorError2 = err;
+	} finally {
+		try {
+			if (!_iteratorNormalCompletion2 && _iterator2.return) {
+				_iterator2.return();
+			}
+		} finally {
+			if (_didIteratorError2) {
+				throw _iteratorError2;
+			}
+		}
 	}
 }
 
