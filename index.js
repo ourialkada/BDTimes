@@ -86,7 +86,7 @@ zmanim.setUseElevation(true)
 			{
 				//document.getElementById("RightDate").innerText = time + " | " + ev.render('en')
 	
-				document.getElementById("ShabbatEnds").innerText = ev.render('en').split(': ')[1]
+				document.getElementById("ShabbatEnds").innerText = ev.render('en').split(': ')[1].toUpperCase()
 				var time72 = ev.render('en').split(': ')[1]
 				
 				var time73 = time72.split(':')
@@ -99,10 +99,10 @@ zmanim.setUseElevation(true)
 				ds = new Date(ds.setMinutes(ds.getMinutes() +72))
 
 				
-				document.getElementById("seventwominshabbat").innerText = ds.toLocaleTimeString([], {timeStyle: 'short'});
+				document.getElementById("seventwominshabbat").innerText = ds.toLocaleTimeString([], {timeStyle: 'short'}).replace('AM','PM');
 
 				
-				document.getElementById("thirtyminshabbat").innerText = dd.toLocaleTimeString([], {timeStyle: 'short'});
+				document.getElementById("thirtyminshabbat").innerText = dd.toLocaleTimeString([], {timeStyle: 'short'}).replace('AM','PM');
 
 				
 			}
