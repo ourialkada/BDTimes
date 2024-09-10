@@ -86,14 +86,14 @@ function Test() {
 
 			if (ev.render('en').includes('Parashat')) {}
 			if (ev.render('en').includes('Candle')) {
-				document.getElementById("CandleLighting").innerText = ev.render('en').split(': ')[1];
+				document.getElementById("CandleLighting").innerText = ev.render('en').split(': ')[1].toUpperCase();
 				document.getElementById("HebrewParsha").innerText = ev.memo;
 				document.getElementById("ShabbatMonthDate").innerText = friday.toDateString() + " | " + hd.toString();
 			}
 			if (ev.render('en').includes('Havdalah')) {
 				//document.getElementById("RightDate").innerText = time + " | " + ev.render('en')
 
-				document.getElementById("ShabbatEnds").innerText = ev.render('en').split(': ')[1];
+				document.getElementById("ShabbatEnds").innerText = ev.render('en').split(': ')[1].toUpperCase();
 				var time72 = ev.render('en').split(': ')[1];
 
 				var time73 = time72.split(':');
@@ -105,9 +105,9 @@ function Test() {
 				dd = new Date(dd.setMinutes(dd.getMinutes() + 30));
 				ds = new Date(ds.setMinutes(ds.getMinutes() + 72));
 
-				document.getElementById("seventwominshabbat").innerText = ds.toLocaleTimeString([], { timeStyle: 'short' });
+				document.getElementById("seventwominshabbat").innerText = ds.toLocaleTimeString([], { timeStyle: 'short' }).replace('AM', 'PM');
 
-				document.getElementById("thirtyminshabbat").innerText = dd.toLocaleTimeString([], { timeStyle: 'short' });
+				document.getElementById("thirtyminshabbat").innerText = dd.toLocaleTimeString([], { timeStyle: 'short' }).replace('AM', 'PM');
 			}
 
 			var dusk = new Date(zmanim.dusk().setHours(zmanim.dusk().getHours() - 3));

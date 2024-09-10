@@ -76,7 +76,7 @@ zmanim.setUseElevation(true)
 			}
 			if(ev.render('en').includes('Candle'))
 			{ 
-				document.getElementById("CandleLighting").innerText = ev.render('en').split(': ')[1]
+				document.getElementById("CandleLighting").innerText = ev.render('en').split(': ')[1].toUpperCase()
 				document.getElementById("HebrewParsha").innerText = ev.memo
 				document.getElementById("ShabbatMonthDate").innerText =friday.toDateString() + " | " + hd.toString()
 
