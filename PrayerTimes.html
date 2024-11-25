@@ -1,0 +1,93 @@
+<table style="width: 100%; margin-left: auto; margin-right: auto; border-collapse: collapse;text-align: center;">
+    <tbody>
+        <tr style="line-height: 80px;background-color: #002a47;color: #D26873;font-weight: bold;" class="header-row">
+            <td style="font-size:22px;"></td>
+            <td style="font-size:22px;">Shacharit</td>
+            <td style="font-size:22px;">Mincha</td>
+            <td style="font-size:22px;">Arvit</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px; background-color: #002a47;color: #D26873;font-weight: bold;">Sunday</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">7:00 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes after Shkia</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px;background-color: #002a47;color: #D26873;font-weight: bold;">Monday</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">6:00 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes after Shkia</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px;background-color: #002a47;color: #D26873;font-weight: bold;">Tuesday</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">6:00 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes after Shkia</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px;background-color: #002a47;color: #D26873;font-weight: bold;">Wednesday</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">6:00 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes after Shkia</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px;background-color: #002a47;color: #D26873;font-weight: bold;">Thursday</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">6:00 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes after Shkia</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px;background-color: #002a47;color: #D26873;font-weight: bold;">Friday</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">6:00 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">10 Minutes after Shkia</td>
+        </tr>
+
+        <tr style="line-height: 80px;background-color: lightgray;">
+            <td style="font-size:22px;background-color: #002a47;color: #D26873;font-weight: bold;">Shabbat</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">9:15 am</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">45 Minutes before Shkia</td>
+            <td style="border:white 3px solid; color:#4954C6; font-weight: bold;">25 Minutes after Shkia</td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    @media (max-width: 600px) {
+        .header-row {
+            display: none; /* Hide header row for mobile view */
+        }
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        tr {
+            margin-bottom: 15px;
+        }
+        td {
+            text-align: center;
+            padding-left: 0;
+            position: relative;
+        }
+        td:nth-child(2)::before {
+            content: "Shacharit: ";
+            font-weight: bold;
+        }
+        td:nth-child(3)::before {
+            content: "Mincha: ";
+            font-weight: bold;
+        }
+        td:nth-child(4)::before {
+            content: "Arvit: ";
+            font-weight: bold;
+        }
+        td {
+            border: none; /* Remove borders for mobile view */
+        }
+    }
+</style>
