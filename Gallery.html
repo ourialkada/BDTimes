@@ -1,25 +1,43 @@
 <style>
   /* Add styles for mobile responsiveness */
+  
   @media (max-width: 600px) {
     .tabs-container {
-      display: flex;
+      display: none;
       flex-direction: column; /* Stack buttons vertically */
       margin-top: -200px; /* Adjust this value as needed */
       align-items: center; /* Center contents horizontally */
       transform: translatey(80%);
+
     }
 
+    .tabs-container1 {
+      flex-direction: column; /* Stack buttons vertically */
+      margin-top: -200px; /* Adjust this value as needed */
+      align-items: center; /* Center contents horizontally */
+      transform: translatey(80%);
+
+    }
+    
     .tab-btn {
       width: 100%; /* Make buttons full width */
       padding: 15px; /* Increase padding for touch targets */
       font-size: 16px; /* Increase font size for readability */
       text-align: center; /* Center text within buttons */
-      margin-left: 10px;
+      max-width: 100%;
     }
+
+  
   }
 </style>
 
-<div class="tabs-container">
+
+<div id="tabs-container1" >
+    <button class="tab-btn" id="dropd" onclick="dropClick()" >
+        All
+     </button>
+     <div id="tabs-container" class="tabs-container">
+   
     <button class="tab-btn" id="tab-1" onclick="tabOneClick()">
       All
     </button>
@@ -39,9 +57,27 @@
       Young Professional Programs
     </button>
 </div>
+</div>
   
   <!--Be sure jQuery is loaded on your site.-->
   <script>
+    var isHidden = true;
+
+    function dropClick() {
+        console.log('hi')
+    if(isHidden)
+    {
+        document.getElementById('tabs-container').style.display = "flex";
+        document.getElementById('dropd').style.display = "none";
+       // isHidden=false;
+    }
+    else
+    {
+         document.getElementById('tabs-container').style.display = "none"; 
+         isHidden=true;
+    }
+
+    }
     function tabOneClick() {
       $('button.tab-btn:nth-of-type(1)').addClass("active");
       $('button.tab-btn:nth-of-type(2)').removeClass("active");
@@ -56,9 +92,16 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
       $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
-  
+      if (window.innerWidth <= 600){
+
+      document.getElementById('tabs-container').style.display = "none"; 
+      document.getElementById('dropd').style.display = "block";
+      document.getElementById('dropd').innerText = "All"; // Set the inner text to "All"
+      }
       window.Squarespace.initializeLayoutBlocks(Y);
       window.dispatchEvent(new Event('resize'))
+     
+
     }
   
     function tabTwoClick() {
@@ -75,6 +118,12 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
       $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+      if (window.innerWidth <= 600){
+
+      document.getElementById('tabs-container').style.display = "none"; 
+      document.getElementById('dropd').style.display = "block";
+      document.getElementById('dropd').innerText = "Banquet Hall"; // Set the inner text to "All"
+      }
       window.Squarespace.initializeLayoutBlocks(Y);
       window.dispatchEvent(new Event('resize'))
     }
@@ -93,6 +142,13 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
       $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+
+      if (window.innerWidth <= 600){
+
+      document.getElementById('tabs-container').style.display = "none"; 
+      document.getElementById('dropd').style.display = "block";
+      document.getElementById('dropd').innerText = "Family Events"; // Set the inner text to "All"
+      }
       window.Squarespace.initializeLayoutBlocks(Y);
       window.dispatchEvent(new Event('resize'))
     }
@@ -111,6 +167,14 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').addClass("tab-section-show");
       $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+
+      if (window.innerWidth <= 600){
+
+      document.getElementById('tabs-container').style.display = "none"; 
+      document.getElementById('dropd').style.display = "block";
+      document.getElementById('dropd').innerText = "Ladies Events"; // Set the inner text to "All"
+      }
+
       window.Squarespace.initializeLayoutBlocks(Y);
       window.dispatchEvent(new Event('resize'))
     }
@@ -129,6 +193,12 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
       $('[data-section-id="673568ef87f3d11aede79534"]').addClass("tab-section-show");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+
+      if (window.innerWidth <= 600){
+      document.getElementById('tabs-container').style.display = "none"; 
+      document.getElementById('dropd').style.display = "block";
+      document.getElementById('dropd').innerText = "Teens/Kids Program"; // Set the inner text to "All"
+    }
       window.Squarespace.initializeLayoutBlocks(Y);
       window.dispatchEvent(new Event('resize'))
     }
@@ -147,6 +217,15 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
       $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').addClass("tab-section-show");
+
+
+      if (window.innerWidth <= 600) { // Check if the viewport width is 600px or less
+          document.getElementById('dropd').innerText = "Young Professional Programs"; 
+          
+      document.getElementById('tabs-container').style.display = "none"; 
+      document.getElementById('dropd').style.display = "block";// Set the inner text to "Young Professional Programs"
+      }
+
       window.Squarespace.initializeLayoutBlocks(Y);
       window.dispatchEvent(new Event('resize'))
     }
@@ -158,7 +237,8 @@
       $('[data-section-id="673568e787f3d11aede790a6"]').addClass("tab-section-hide");
       $('[data-section-id="673568ef87f3d11aede79534"]').addClass("tab-section-hide");
       $('[data-section-id="673568e2b61c772e9e4d7ca8"]').addClass("tab-section-hide");
-  
+    
       tabOneClick();
+      
     });
   </script>
