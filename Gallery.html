@@ -1,0 +1,164 @@
+<style>
+  /* Add styles for mobile responsiveness */
+  @media (max-width: 600px) {
+    .tabs-container {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      margin-top: -200px; /* Adjust this value as needed */
+      align-items: center; /* Center contents horizontally */
+      transform: translatey(80%);
+    }
+
+    .tab-btn {
+      width: 100%; /* Make buttons full width */
+      padding: 15px; /* Increase padding for touch targets */
+      font-size: 16px; /* Increase font size for readability */
+      text-align: center; /* Center text within buttons */
+      margin-left: 10px;
+    }
+  }
+</style>
+
+<div class="tabs-container">
+    <button class="tab-btn" id="tab-1" onclick="tabOneClick()">
+      All
+    </button>
+    <button class="tab-btn" id="tab-2" onclick="tabTwoClick()">
+      Banquet Hall
+    </button>
+    <button class="tab-btn" id="tab-3" onclick="tabThreeClick()">
+      Family Events
+    </button>
+    <button class="tab-btn" id="tab-4" onclick="tabFourClick()">
+      Ladies Events
+    </button>
+    <button class="tab-btn" id="tab-5" onclick="tabFiveClick()">
+      Teens/Kids Program
+    </button>
+    <button class="tab-btn" id="tab-6" onclick="tabSixClick()">
+      Young Professional Programs
+    </button>
+</div>
+  
+  <!--Be sure jQuery is loaded on your site.-->
+  <script>
+    function tabOneClick() {
+      $('button.tab-btn:nth-of-type(1)').addClass("active");
+      $('button.tab-btn:nth-of-type(2)').removeClass("active");
+      $('button.tab-btn:nth-of-type(3)').removeClass("active");
+      $('button.tab-btn:nth-of-type(4)').removeClass("active");
+      $('button.tab-btn:nth-of-type(5)').removeClass("active");
+      $('button.tab-btn:nth-of-type(6)').removeClass("active");
+  
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').addClass("tab-section-show");
+      $('[data-section-id="673568bd8d23f318afd74257"]').removeClass("tab-section-show");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
+      $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+  
+      window.Squarespace.initializeLayoutBlocks(Y);
+      window.dispatchEvent(new Event('resize'))
+    }
+  
+    function tabTwoClick() {
+      $('button.tab-btn:nth-of-type(1)').removeClass("active");
+      $('button.tab-btn:nth-of-type(2)').addClass("active");
+      $('button.tab-btn:nth-of-type(3)').removeClass("active");
+      $('button.tab-btn:nth-of-type(4)').removeClass("active");
+      $('button.tab-btn:nth-of-type(5)').removeClass("active");
+      $('button.tab-btn:nth-of-type(6)').removeClass("active");
+  
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').removeClass("tab-section-show");
+      $('[data-section-id="673568bd8d23f318afd74257"]').addClass("tab-section-show");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
+      $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+      window.Squarespace.initializeLayoutBlocks(Y);
+      window.dispatchEvent(new Event('resize'))
+    }
+  
+    function tabThreeClick() {
+      $('button.tab-btn:nth-of-type(1)').removeClass("active");
+      $('button.tab-btn:nth-of-type(2)').removeClass("active");
+      $('button.tab-btn:nth-of-type(3)').addClass("active");
+      $('button.tab-btn:nth-of-type(4)').removeClass("active");
+      $('button.tab-btn:nth-of-type(5)').removeClass("active");
+      $('button.tab-btn:nth-of-type(6)').removeClass("active");
+  
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').removeClass("tab-section-show");
+      $('[data-section-id="673568bd8d23f318afd74257"]').removeClass("tab-section-show");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').addClass("tab-section-show");
+      $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
+      $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+      window.Squarespace.initializeLayoutBlocks(Y);
+      window.dispatchEvent(new Event('resize'))
+    }
+  
+    function tabFourClick() {
+      $('button.tab-btn:nth-of-type(1)').removeClass("active");
+      $('button.tab-btn:nth-of-type(2)').removeClass("active");
+      $('button.tab-btn:nth-of-type(3)').removeClass("active");
+      $('button.tab-btn:nth-of-type(4)').addClass("active");
+      $('button.tab-btn:nth-of-type(5)').removeClass("active");
+      $('button.tab-btn:nth-of-type(6)').removeClass("active");
+  
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').removeClass("tab-section-show");
+      $('[data-section-id="673568bd8d23f318afd74257"]').removeClass("tab-section-show");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e787f3d11aede790a6"]').addClass("tab-section-show");
+      $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+      window.Squarespace.initializeLayoutBlocks(Y);
+      window.dispatchEvent(new Event('resize'))
+    }
+  
+    function tabFiveClick() {
+      $('button.tab-btn:nth-of-type(1)').removeClass("active");
+      $('button.tab-btn:nth-of-type(2)').removeClass("active");
+      $('button.tab-btn:nth-of-type(3)').removeClass("active");
+      $('button.tab-btn:nth-of-type(4)').removeClass("active");
+      $('button.tab-btn:nth-of-type(5)').addClass("active");
+      $('button.tab-btn:nth-of-type(6)').removeClass("active");
+  
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').removeClass("tab-section-show");
+      $('[data-section-id="673568bd8d23f318afd74257"]').removeClass("tab-section-show");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
+      $('[data-section-id="673568ef87f3d11aede79534"]').addClass("tab-section-show");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').removeClass("tab-section-show");
+      window.Squarespace.initializeLayoutBlocks(Y);
+      window.dispatchEvent(new Event('resize'))
+    }
+  
+    function tabSixClick() {
+      $('button.tab-btn:nth-of-type(1)').removeClass("active");
+      $('button.tab-btn:nth-of-type(2)').removeClass("active");
+      $('button.tab-btn:nth-of-type(3)').removeClass("active");
+      $('button.tab-btn:nth-of-type(4)').removeClass("active");
+      $('button.tab-btn:nth-of-type(5)').removeClass("active");
+      $('button.tab-btn:nth-of-type(6)').addClass("active");
+  
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').removeClass("tab-section-show");
+      $('[data-section-id="673568bd8d23f318afd74257"]').removeClass("tab-section-show");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e787f3d11aede790a6"]').removeClass("tab-section-show");
+      $('[data-section-id="673568ef87f3d11aede79534"]').removeClass("tab-section-show");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').addClass("tab-section-show");
+      window.Squarespace.initializeLayoutBlocks(Y);
+      window.dispatchEvent(new Event('resize'))
+    }
+  
+    $(function() {
+      $('[data-section-id="66e0a8239bc39832c4f98b18"]').addClass("tab-section-hide");
+      $('[data-section-id="673568bd8d23f318afd74257"]').addClass("tab-section-hide");
+      $('[data-section-id="673568d594f31769ecbbbce3"]').addClass("tab-section-hide");
+      $('[data-section-id="673568e787f3d11aede790a6"]').addClass("tab-section-hide");
+      $('[data-section-id="673568ef87f3d11aede79534"]').addClass("tab-section-hide");
+      $('[data-section-id="673568e2b61c772e9e4d7ca8"]').addClass("tab-section-hide");
+  
+      tabOneClick();
+    });
+  </script>
